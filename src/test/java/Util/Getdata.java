@@ -56,24 +56,6 @@ class mythread3 extends Thread{
 
 }
 
-//class mythread4 extends Thread{
-//    public long finaltime4 = 0;
-//    @Override
-//    public void run() {
-//        long starttime = System.currentTimeMillis();
-//        FileReader obj;
-//        for (int i = 9; i <= 10; i++){
-//            String str = "Sample"+i+".txt";
-//            String str2 = "Changed"+i+".txt";
-//            obj = new FileReader("C:/Users/LENOVO/Desktop/Unprocessed/"+str, "C:/Users/LENOVO/Desktop/Processed/"+str2);
-//            obj.read();
-//        }
-//        long stoptime = System.currentTimeMillis();
-//        finaltime4 = stoptime-starttime;
-//        System.out.println("my Thread 4 finidhed at "+finaltime4);
-//    }
-//
-//}
 
 public class Getdata extends FileReader{
     public void Dothesubstitute() throws IOException {

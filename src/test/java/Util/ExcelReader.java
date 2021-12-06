@@ -32,57 +32,6 @@ public class ExcelReader {
                 e.printStackTrace();
             }
         }
-
-
-
-//    public static void getRowCount(){
-////        String projdir = System.getProperty("user.dir");
-////        System.out.println(projdir);
-//        try {
-////            String excelpath = "./Data/test.xlsx";
-////            workbook = new XSSFWorkbook(excelpath);
-////             sheet = workbook.getSheet("Sheet1");
-//            int rowcount = sheet.getPhysicalNumberOfRows();
-//            System.out.println("No of Rows are " + rowcount);
-//        }
-//        catch (Exception e){
-//            System.out.println(e);
-//        }
-//    }
-//    public static void getCellData(){
-//
-//        try {
-////            String excelpath = "./Data/test.xlsx";
-////            XSSFWorkbook workbook = new XSSFWorkbook(excelpath);
-//            DataFormatter dataFormatter = new DataFormatter();
-//            Iterator<Sheet> sheets = workbook.sheetIterator();
-//            while (sheets.hasNext()){
-//                Sheet sh = sheets.next();
-//                System.out.println("sheet name is "+sh.getSheetName());
-//                System.out.println("------------");
-//                Iterator<Row> iterator = sh.iterator();
-//                while (iterator.hasNext()){
-//                    Row row = iterator.next();
-//                    Iterator<Cell> cellIterator = row.iterator();
-//                    while (cellIterator.hasNext()){
-//                        Cell cell = cellIterator.next();
-//                        String cellvalue = dataFormatter.formatCellValue(cell);
-//                        System.out.println(cellvalue+"\t");
-//                        list.add(cellvalue);
-//                    }
-//                    System.out.println();
-//                }
-//                workbook.close();
-//            }
-////            XSSFSheet sheet = workbook.getSheet("Sheet1");
-////            String value = sheet.getRow(1).getCell(0).getStringCellValue();
-////            System.out.println(value);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
     public static HashMap<String,String> GetDatas() throws IOException{
         FileInputStream inputStream = new FileInputStream(ExcelPath);
         XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
@@ -92,12 +41,10 @@ public class ExcelReader {
             XSSFRow rowobj = sheet.getRow(i);
             for (int j=0;j<col;j++){
                 XSSFCell colobj = rowobj.getCell(j);
-//                System.out.print(colobj.getStringCellValue()+"  ");
                 list.add(colobj.getStringCellValue());
             }
-//            System.out.println();
+
         }
-//        System.out.println(list);
         for (int i=0;i<list.size();i+=2){
             hm.put(list.get(i),list.get(i+1));
         }
