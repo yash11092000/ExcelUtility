@@ -1,7 +1,6 @@
 package Util;
 
 import java.io.*;
-import java.nio.file.NoSuchFileException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -20,10 +19,8 @@ public class FileReader {
     }
     public static void read() {
         try {
-//           File input = new File("C:/Users/LENOVO/Desktop/Unprocessed/test.txt");
             File input = new File(ReadFile);
             Scanner sc = new Scanner(input);
-//            FileWriter writer = new FileWriter("C:/Users/LENOVO/Desktop/Unprocessed/Changed.txt");
             FileWriter writer = new FileWriter(WriteFile);
             while (sc.hasNextLine()) {
                 String str = sc.next();
@@ -58,33 +55,20 @@ public class FileReader {
         BufferedWriter out = null;
         try {
            File input = new File("C:/Users/LENOVO/Desktop/Processed/Changed1.txt");
-//            File input = new File(ReadFile);
             Scanner sc = new Scanner(input);
             out = new BufferedWriter(new FileWriter("C:/Users/LENOVO/Desktop/Reprocessed/Rechanged1.txt"));
-//            out = new BufferedWriter(new FileWriter(WriteFile));
-//            FileWriter writer = new FileWriter("C:/Users/LENOVO/Desktop/Reprocessed/Rechanged1.txt");
-//            FileWriter writer = new FileWriter(WriteFile);
             while (sc.hasNextLine()) {
                 String str = sc.next();
                 if (hm2.containsKey(str)){
                     String newstr = hm2.get(str);
                     out.write(newstr+" ");
-//                    writer.append(newstr);
-//                    System.out.println(hm2.get(str));
+
                 }
-//                if (hm2.containsKey(str)) {
-//                    writer.write(hm2.get(str) + " ");
-//                }
                 else{
                     out.write(str+" ");
-//                    writer.write(str+" ");
-//                    System.out.println(str);
                 }
-//                System.out.println(str);
 
             }
-//            writer.flush();
-//            writer.close();
             System.out.println("Writing Completed...");
 
         }
@@ -94,7 +78,6 @@ public class FileReader {
             e.printStackTrace();
         }
         catch (Exception e){
-//            System.out.println(e.getCause());
         }
         finally {
             if (out!=null){
@@ -131,32 +114,14 @@ public class FileReader {
 
     }
 
-//    public void FileWrite() throws IOException {
-//        FileWriter writer = new FileWriter("C:/Users/LENOVO/Desktop/Unprocessed/Changed.txt");
-//        writer.write();
-//    }
     public static void Data() throws IOException {
         ExcelReader obj = new ExcelReader("./Data/test.xlsx","Sheet1");
         hm = obj.GetDatas();
-//       System.out.println(hm);
 
     }
     public static void Data2(){
         ExcelReader obj = new ExcelReader("./Data/test.xlsx","Sheet1");
         hm2 = obj.Convert();
-//        System.out.println(hm2);
     }
 
-    public static void main(String[] args) throws IOException {
-//
-        Data();
-        Data2();
-//
-        read2();
-//        System.out.println();
-//        Data2();
-//        FileReader obj = new FileReader("C:/Users/LENOVO/Desktop/Unprocessed/Sample10.txt","C:/Users/LENOVO/Desktop/Processed/Changed.txt");
-//        obj.read();
-        Compare();
-    }
 }

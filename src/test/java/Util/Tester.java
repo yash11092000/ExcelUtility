@@ -10,7 +10,7 @@ public class Tester {
 //        1>Create Object of GetData Class and Call Dothesubstitue() method
 //        2>call the CreateCompareFile to create Reprocessed text file from processed File
 //        3>call the CompareFile method to compare Unprocessed and Reprocessed
-//        4>Dont call the method simultaneously call them when one method completes its execution
+//
 
         Getdata obj = new Getdata();
         obj.Dothesubstitute2();

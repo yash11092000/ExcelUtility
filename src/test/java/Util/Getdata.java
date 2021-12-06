@@ -76,41 +76,7 @@ class mythread3 extends Thread{
 //}
 
 public class Getdata extends FileReader{
-    public static void main(String[] args) throws IOException {
-//       ExcelReader obj = new ExcelReader("./Data/test.xlsx","Sheet1");
-////       ArrayList<String> ans = obj.GetDatas()
-////       System.out.println(ans);
-////        HashMap<String,String> hm = obj.Convert(ans);
-
-//        long starttime = System.currentTimeMillis();
-//
-        Data();
-////        obj.Data2();
-//
-//        for (int i = 1; i <= 10; i++){
-//            String str = "Sample"+i+".txt";
-//            String str2 = "Changed"+i+".txt";
-//            FileReader obj2 = new FileReader("C:/Users/LENOVO/Desktop/Unprocessed/"+str, "C:/Users/LENOVO/Desktop/Processed/"+str2);
-//            obj2.read();
-//        }
-        mythread t1 = new mythread();
-        mythread2 t2 = new mythread2();
-        mythread3 t3 = new mythread3();
-//        mythread4 t4 = new mythread4();
-        t1.start();
-        t2.start();
-        t3.start();
-//        t4.start();
-//        long stoptime = System.currentTimeMillis();
-//        System.out.println(stoptime-starttime);
-
-//        FileReader obj = new FileReader("C:/Users/LENOVO/Desktop/Unprocessed/Sample1.txt","C:/Users/LENOVO/Desktop/Processed/Change1.txt");
-//        obj.Data();
-//        obj.read();
-
-    }
     public void Dothesubstitute() throws IOException {
-//        FileReader obj = new FileReader();
         Data();
         mythread t1 = new mythread();
         mythread2 t2 = new mythread2();
@@ -129,14 +95,11 @@ public class Getdata extends FileReader{
         }
     }
     public void CreateCompareFile() throws IOException {
-//        FileReader obj = new FileReader();
         Data();
         Data2();
         read2();
-
     }
     public void CompareFile(){
-//        FileReader obj = new FileReader();
         Compare();
     }
 }
